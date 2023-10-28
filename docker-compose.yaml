@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  nest:
+    build: ./nest
+    ports:
+      - 3000:3000
+      - 5555:5555
+    volumes:
+      - ./nest:/usr/src/app
+    
+  db:
+    image: mysql:latest
+    volumes:
+      - mysql_data:/var/lib/mysql
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: nest
+  
+volumes:
+  mysql_data:
+    driver: local
