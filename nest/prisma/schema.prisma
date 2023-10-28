@@ -1,0 +1,48 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Route {
+  id            Int      @id @default(autoincrement())
+  name          String   @unique
+  sourceId      Int      @map("source_id")
+  destinationId Int      @map("destination_id")
+  created_at    DateTime @default(now())
+  updated_at    DateTime @updatedAt
+  distance      Float
+  duration      Float
+  directions    Json
+  source        Place?   @relation("SourcePlace", fields: [sourceId], references: [id])
+  destination   Place?   @relation("DestinationPlace", fields: [destinationId], references: [id])
+
+  @@unique([sourceId, destinationId])
+}
+
+model Place {
+  id         Int    @id @default(autoincrement())
+  name       String
+  locationId Int    @map("location_id")
+  location   Coord  @relation(fields: [locationId], references: [id])
+
+  SourceRoute      Route[] @relation("SourcePlace")
+  DestinationRoute Route[] @relation("DestinationPlace")
+
+  @@unique([name, locationId])
+}
+
+model Coord {
+  id    Int     @id @default(autoincrement())
+  lat   Float
+  lng   Float
+  Place Place[]
+
+  @@unique([lat, lng])
+}

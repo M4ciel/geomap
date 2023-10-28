@@ -1,0 +1,19 @@
+### Find all routes
+GET http://localhost:3000/routes
+
+### Create a route
+POST http://localhost:3000/routes
+Content-Type: application/json
+
+{
+    "name": "rota test",
+    "source_id": "ChIJA_VI67yKxZQRG3jQWayZf5Q",
+    "destination_id": "ChIJLcaCsTxFz5QRBJaJm1DAuHA"
+}
+
+### Get place
+GET http://localhost:3000/places?text=Itu, sp
+
+
+### Get Direction Sorocaba - Itu
+GET http://localhost:3000/directions?originId=ChIJA_VI67yKxZQRG3jQWayZf5Q&destinationId=ChIJLcaCsTxFz5QRBJaJm1DAuHA
