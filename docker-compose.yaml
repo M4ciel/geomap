@@ -7,7 +7,18 @@ services:
       - 3000:3000
       - 5555:5555
     volumes:
-      - ./nest:/usr/src/app
+      - ./nest:/home/node/app
+    environment:
+      - NODE_ENV=development
+
+  next:
+    build: ./next
+    ports:
+      - 3001:3000
+    volumes:
+      - ./next:/home/node/app
+    environment:
+      - NODE_ENV=development
     
   db:
     image: mysql:latest
