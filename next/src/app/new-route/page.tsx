@@ -7,11 +7,7 @@ export const metadata: Metadata = {
 };
 
 export function NewRoutePage() {
-    return (
-        <>
-            <NewRoute />
-        </>
-    );
+    return <NewRoute />;
 }
 
 export default NewRoutePage;
