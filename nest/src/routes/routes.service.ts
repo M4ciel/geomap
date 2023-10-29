@@ -144,14 +144,22 @@ export class RoutesService {
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} route`;
-  }
-
-  // update(id: number, updateRouteDto: UpdateRouteDto) {
-  //   return `This action updates a #${id} route`;
-  // }
-
-  remove(id: number) {
-    return `This action removes a #${id} route`;
+    return this.prismaService.route.findFirst({
+      where: {
+        id,
+      },
+      include: {
+        source: {
+          include: {
+            location: true,
+          },
+        },
+        destination: {
+          include: {
+            location: true,
+          },
+        },
+      },
+    });
   }
 }

@@ -17,3 +17,7 @@ GET http://localhost:3000/places?text=Itu, sp
 
 ### Get Direction Sorocaba - Itu
 GET http://localhost:3000/directions?originId=ChIJA_VI67yKxZQRG3jQWayZf5Q&destinationId=ChIJLcaCsTxFz5QRBJaJm1DAuHA
+
+
+### Find Route
+GET http://localhost:3000/routes/3
