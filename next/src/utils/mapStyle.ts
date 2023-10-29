@@ -11,88 +11,88 @@ function createStrokeStyle(color: string) {
 }
 
 export const mapStyle: MapStyle.Data[] = [
-    { elementType: "geometry", stylers: createColorStyle("#242f3e") },
+    { elementType: ElementType.GEOMETRY, stylers: createColorStyle("#242f3e") },
     {
-        elementType: "labels.text.stroke",
+        elementType: ElementType.LABELS_TEXT_STROKE,
         stylers: createStrokeStyle("#242f3e"),
     },
     {
-        elementType: "labels.text.fill",
+        elementType: ElementType.LABELS_TEXT_FILL,
         stylers: createFillStyle("#746855"),
     },
     {
         featureType: "administrative.locality",
-        elementType: "labels.text.fill",
+        elementType: ElementType.LABELS_TEXT_FILL,
         stylers: createFillStyle("#d59563"),
     },
     {
         featureType: "poi",
-        elementType: "labels.text.fill",
+        elementType: ElementType.LABELS_TEXT_FILL,
         stylers: createFillStyle("#d59563"),
     },
     {
         featureType: "poi.park",
-        elementType: "geometry",
+        elementType: ElementType.GEOMETRY,
         stylers: createColorStyle("#263c3f"),
     },
     {
         featureType: "poi.park",
-        elementType: "labels.text.fill",
+        elementType: ElementType.LABELS_TEXT_FILL,
         stylers: createFillStyle("#6b9a76"),
     },
     {
         featureType: "road",
-        elementType: "geometry",
+        elementType: ElementType.GEOMETRY,
         stylers: createColorStyle("#38414e"),
     },
     {
         featureType: "road",
-        elementType: "geometry.stroke",
+        elementType: ElementType.GEOMETRY_STROKE,
         stylers: createStrokeStyle("#212a37"),
     },
     {
         featureType: "road",
-        elementType: "labels.text.fill",
+        elementType: ElementType.LABELS_TEXT_FILL,
         stylers: createFillStyle("#9ca5b3"),
     },
     {
         featureType: "road.highway",
-        elementType: "geometry",
+        elementType: ElementType.GEOMETRY,
         stylers: createColorStyle("#746855"),
     },
     {
         featureType: "road.highway",
-        elementType: "geometry.stroke",
+        elementType: ElementType.GEOMETRY_STROKE,
         stylers: createStrokeStyle("#1f2835"),
     },
     {
         featureType: "road.highway",
-        elementType: "labels.text.fill",
+        elementType: ElementType.LABELS_TEXT_FILL,
         stylers: createFillStyle("#f3d19c"),
     },
     {
         featureType: "transit",
-        elementType: "geometry",
+        elementType: ElementType.GEOMETRY,
         stylers: createColorStyle("#2f3948"),
     },
     {
         featureType: "transit.station",
-        elementType: "labels.text.fill",
+        elementType: ElementType.LABELS_TEXT_FILL,
         stylers: createFillStyle("#d59563"),
     },
     {
         featureType: "water",
-        elementType: "geometry",
+        elementType: ElementType.GEOMETRY,
         stylers: createColorStyle("#17263c"),
     },
     {
         featureType: "water",
-        elementType: "labels.text.fill",
+        elementType: ElementType.LABELS_TEXT_FILL,
         stylers: createFillStyle("#515c6d"),
     },
     {
         featureType: "water",
-        elementType: "labels.text.stroke",
+        elementType: ElementType.LABELS_TEXT_STROKE,
         stylers: createStrokeStyle("#17263c"),
     },
 ];
